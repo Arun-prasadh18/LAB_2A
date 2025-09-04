@@ -11,4 +11,12 @@ second_page=st.Page("lab2.py", title="Second page", icon=None,
 url_path=None, default=True)
 pg=st.navigation([first_page,second_page])
 st.set_page_config(page_title="Data Manager",page_icon=":material/edit:")
+with st.sidebar:
+    add_radio=st.radio("choose a option",("Summarize the document in 100 words", 
+                                          "Summarize the document in 2 connecting paragraphs",
+ "Summarize the document in 5 bullet points"))
+    model_radio=st.radio("choose a option",("GPT-MINI","GPT-NANO"))
+    st.checkbox("Use advanced model", value=False)
+    # if st.checkbox("Use advanced model"):
+    #     model_advanced_radio=st.radio("choose a option",("GPT-MINI"))
 pg.run()
